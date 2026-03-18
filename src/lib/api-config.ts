@@ -3,8 +3,8 @@
  */
 
 export const API_CONFIG = {
-  baseURL: "https://api.fiberace.shop",
-  companyId: "COMP-000006",
+  baseURL: "https://cart-api-nexoviasoft.vercel.app",
+  companyId: "COMP-000001",
 };
 
 /**
