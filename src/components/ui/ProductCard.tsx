@@ -335,7 +335,7 @@ const ProductCard = ({ product, detailHref }: { product: ProductProps; detailHre
 
           <button
             onClick={handleBuyNow}
-            className="inline-flex items-center justify-center btn-circle shrink-0 whitespace-nowrap bg-primary px-2.5 sm:px-3 py-1 sm:py-1.5 text-[9px] sm:text-xs font-medium text-white shadow-sm transition-colors duration-200 hover:bg-gray-800"
+            className="inline-flex items-center justify-center btn-circle shrink-0 whitespace-nowrap bg-primary px-2.5 sm:px-3 py-1 sm:py-1.5 text-[9px] sm:text-xs font-medium text-white shadow-sm transition-colors duration-200 hover:bg-primaryDark"
           >
             <span>এখনই কিনুন</span>
           </button>

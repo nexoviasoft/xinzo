@@ -1,12 +1,7 @@
 "use client";
-import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 import {
-  FaFacebookF,
-  FaInstagram,
-  FaTiktok,
   FaWhatsapp,
-  FaXTwitter,
 } from "react-icons/fa6";
 import {
   FiCheckCircle,
@@ -81,7 +76,6 @@ const ContactUs = () => {
   });
 
   const [formStatus, setFormStatus] = useState<FormStatus>({ type: "idle" });
-  const [focusedField, setFocusedField] = useState<string | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [companyInfo, setCompanyInfo] = useState<SystemUser | null>(null);
 
@@ -216,7 +210,7 @@ const ContactUs = () => {
                   <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
                     <IconComponent size={80} />
                   </div>
-                  <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 text-white bg-black group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-black/20">
+                  <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 text-white bg-primary group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-[rgba(91,46,255,0.25)]">
                     <IconComponent size={24} />
                   </div>
 
@@ -266,10 +260,8 @@ const ContactUs = () => {
                     name="name"
                     value={formData.name}
                     onChange={handleInputChange}
-                    onFocus={() => setFocusedField("name")}
-                    onBlur={() => setFocusedField(null)}
                     required
-                    className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-black focus:ring-0 transition-all duration-200 bg-gray-50/50 focus:bg-white"
+                    className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-0 transition-all duration-200 bg-gray-50/50 focus:bg-white"
                     placeholder="আপনার নাম"
                   />
                 </div>
@@ -288,10 +280,8 @@ const ContactUs = () => {
                     name="email"
                     value={formData.email}
                     onChange={handleInputChange}
-                    onFocus={() => setFocusedField("email")}
-                    onBlur={() => setFocusedField(null)}
                     required
-                    className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-black focus:ring-0 transition-all duration-200 bg-gray-50/50 focus:bg-white"
+                    className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-0 transition-all duration-200 bg-gray-50/50 focus:bg-white"
                     placeholder="example@email.com"
                   />
                 </div>
@@ -310,10 +300,8 @@ const ContactUs = () => {
                     name="subject"
                     value={formData.subject}
                     onChange={handleInputChange}
-                    onFocus={() => setFocusedField("subject")}
-                    onBlur={() => setFocusedField(null)}
                     required
-                    className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-black focus:ring-0 transition-all duration-200 bg-gray-50/50 focus:bg-white"
+                    className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-0 transition-all duration-200 bg-gray-50/50 focus:bg-white"
                     placeholder="কিসের বিষয়ে?"
                   />
                 </div>
@@ -337,7 +325,7 @@ const ContactUs = () => {
                           relative cursor-pointer p-4 rounded-xl border transition-all duration-300 flex flex-col gap-3 group
                           ${
                             isSelected
-                              ? "border-black bg-black text-white shadow-lg scale-[1.02] ring-1 ring-black"
+                              ? "border-primary bg-primary text-white shadow-lg scale-[1.02] ring-1 ring-primary/40"
                               : "border-gray-100 bg-white hover:border-gray-300 hover:shadow-md text-gray-600 hover:bg-gray-50"
                           }
                         `}
@@ -391,11 +379,9 @@ const ContactUs = () => {
                     name="message"
                     value={formData.message}
                     onChange={handleInputChange}
-                    onFocus={() => setFocusedField("message")}
-                    onBlur={() => setFocusedField(null)}
                     required
                     rows={6}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-black focus:ring-0 transition-all duration-200 bg-gray-50/50 focus:bg-white resize-none"
+                    className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-0 transition-all duration-200 bg-gray-50/50 focus:bg-white resize-none"
                     placeholder="আরও বিস্তারিত লিখুন..."
                   />
                 </div>
@@ -404,7 +390,7 @@ const ContactUs = () => {
                 <button
                   type="submit"
                   disabled={formStatus.type === "loading"}
-                  className="w-full bg-black hover:bg-gray-800 text-white font-medium py-4 rounded-lg transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                  className="w-full bg-primary hover:bg-primaryDark text-white font-medium py-4 rounded-lg transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                 >
                   {formStatus.type === "loading" ? (
                     <>
@@ -449,10 +435,10 @@ const ContactUs = () => {
           {/* Info Section */}
           <div className="order-1 lg:order-2 h-full">
             <ScrollAnimation delay={0.2} className="h-full">
-              <div className="relative rounded-3xl p-8 sm:p-12 text-white shadow-2xl overflow-hidden h-full bg-black">
+              <div className="relative rounded-3xl p-8 sm:p-12 text-white shadow-2xl overflow-hidden h-full bg-primary">
                 {/* Decorative background circles */}
-                <div className="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 rounded-full bg-white/5 blur-3xl" />
-                <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-64 h-64 rounded-full bg-white/5 blur-3xl" />
+                <div className="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 rounded-full bg-white/10 blur-3xl" />
+                <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-64 h-64 rounded-full bg-white/10 blur-3xl" />
 
                 <div className="relative z-10">
                   <h2 className="text-3xl sm:text-4xl font-black mb-8 leading-tight tracking-tight">
@@ -518,7 +504,7 @@ const ContactUs = () => {
                         })()}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="group flex items-center gap-3 bg-white text-black px-6 py-3 rounded-full font-bold hover:bg-gray-100 transition-all transform hover:scale-105 active:scale-95"
+                        className="group flex items-center gap-3 bg-white text-primary px-6 py-3 rounded-full font-bold hover:bg-gray-50 transition-all transform hover:scale-105 active:scale-95"
                       >
                         <FaWhatsapp size={20} />
                         <span>চ্যাট করুন</span>

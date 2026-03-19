@@ -41,7 +41,7 @@ export default function Error({ error, reset }: ErrorProps) {
         <div className="flex flex-col sm:flex-row gap-3 pt-4 justify-center">
           <button
             onClick={reset}
-            className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-black text-white text-sm font-bold rounded-xl hover:bg-gray-900 transition-all shadow-lg shadow-black/10 hover:shadow-xl hover:-translate-y-0.5"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary text-white text-sm font-bold rounded-xl hover:bg-primaryDark transition-all shadow-lg shadow-[rgba(91,46,255,0.15)] hover:shadow-xl hover:-translate-y-0.5"
           >
             <FiRefreshCw className="w-4 h-4" />
             আবার চেষ্টা করুন

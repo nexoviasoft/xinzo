@@ -30,13 +30,6 @@ interface FraudCheckerResult {
   [key: string]: unknown;
 }
 
-function toStr(value: unknown): string {
-  if (value == null) return "";
-  if (typeof value === "string") return value;
-  if (typeof value === "number") return String(value);
-  return String(value);
-}
-
 const FraudCheckerClient = () => {
   const [mobile, setMobile] = useState("");
   const [status, setStatus] = useState<"idle" | "error" | "success">("idle");
@@ -95,15 +88,6 @@ const FraudCheckerClient = () => {
   }, [phoneToCheck]);
 
   const phoneInfo = result?.phone_info || result?.phone || null;
-  const phoneDisplay = toStr(
-    phoneInfo?.original ?? phoneInfo?.number ?? phoneToCheck,
-  );
-  const phoneOperator = toStr(
-    phoneInfo?.operator ?? phoneInfo?.operator_name ?? "অজানা",
-  );
-  const phoneInternational = toStr(
-    phoneInfo?.e164 ?? phoneInfo?.international ?? "",
-  );
   const summary = result?.summary ?? result ?? null;
   const totalOrders = Number(
     (summary as Record<string, unknown> | null)?.total_orders ??
@@ -148,7 +132,7 @@ const FraudCheckerClient = () => {
     <div className="min-h-screen bg-white py-10 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto space-y-8">
         <div className="flex flex-col items-center text-center space-y-4">
-          <div className="h-16 w-16 rounded-3xl bg-black flex items-center justify-center text-white text-3xl shadow-lg shadow-gray-300/50">
+          <div className="h-16 w-16 rounded-3xl bg-primary flex items-center justify-center text-white text-3xl shadow-lg shadow-gray-300/50">
             <IoShieldCheckmark />
           </div>
           <div>
@@ -182,7 +166,7 @@ const FraudCheckerClient = () => {
             </div>
             <button
               type="submit"
-              className="w-full inline-flex items-center justify-center px-6 py-3 rounded-full text-sm sm:text-base font-semibold text-white bg-black hover:bg-gray-800 shadow-md shadow-gray-300/50 transition-all duration-150"
+              className="w-full inline-flex items-center justify-center px-6 py-3 rounded-full text-sm sm:text-base font-semibold text-white bg-primary hover:bg-primaryDark shadow-md shadow-gray-300/50 transition-all duration-150"
             >
               ফ্রড চেক করুন
             </button>

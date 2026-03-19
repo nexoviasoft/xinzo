@@ -26,7 +26,7 @@ export default function NotFound() {
         <div className="pt-4">
           <Link 
             href="/"
-            className="inline-flex items-center gap-2 px-8 py-3.5 bg-black text-white text-sm font-bold rounded-xl hover:bg-gray-900 transition-all shadow-lg shadow-black/10 hover:shadow-xl hover:-translate-y-0.5"
+            className="inline-flex items-center gap-2 px-8 py-3.5 bg-primary text-white text-sm font-bold rounded-xl hover:bg-primaryDark transition-all shadow-lg shadow-[rgba(91,46,255,0.15)] hover:shadow-xl hover:-translate-y-0.5"
           >
             <FiHome className="w-4 h-4" />
             হোম পেজে ফিরে যান

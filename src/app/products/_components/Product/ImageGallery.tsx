@@ -34,7 +34,7 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images }) => {
             className={cn(
               "btn-rounded relative aspect-square overflow-hidden rounded-lg border bg-gray-50 transition-all",
               currentImage === index
-                ? "border-black ring-1 ring-black"
+                ? "border-primary ring-1 ring-primary"
                 : "border-gray-200 hover:border-gray-400"
             )}
           >

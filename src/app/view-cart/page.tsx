@@ -15,7 +15,7 @@ function ViewCartContent() {
     return (
       <div className="min-h-screen bg-gray-50/50 flex items-center justify-center">
         <div className="flex flex-col items-center gap-3">
-          <div className="w-8 h-8 border-2 border-black border-t-transparent rounded-full animate-spin" />
+          <div className="w-8 h-8 border-2 border-primary border-t-transparent rounded-full animate-spin" />
           <p className="text-sm font-medium text-gray-500">লোড হচ্ছে...</p>
         </div>
       </div>
@@ -41,7 +41,7 @@ function ViewCartContent() {
             </div>
             <Link
               href="/products"
-              className="inline-flex items-center justify-center px-8 py-3 bg-black text-white text-sm font-bold rounded-xl hover:bg-gray-900 transition-all shadow-lg shadow-black/10 hover:shadow-xl hover:-translate-y-0.5"
+              className="inline-flex items-center justify-center px-8 py-3 bg-primary text-white text-sm font-bold rounded-xl hover:bg-primaryDark transition-all shadow-lg shadow-[rgba(91,46,255,0.15)] hover:shadow-xl hover:-translate-y-0.5"
             >
               কেনাকাটা করুন
             </Link>
@@ -97,7 +97,7 @@ function ViewCartContent() {
 
                 <Link
                   href="/checkout"
-                  className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-black text-white text-sm font-bold rounded-lg hover:bg-gray-900 transition-all shadow-md shadow-black/10 hover:shadow-lg hover:-translate-y-0.5"
+                  className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-primary text-white text-sm font-bold rounded-lg hover:bg-primaryDark transition-all shadow-md shadow-[rgba(91,46,255,0.12)] hover:shadow-lg hover:-translate-y-0.5"
                 >
                   চেকআউট করুন
                   <FiArrowRight className="w-4 h-4" />
@@ -121,7 +121,7 @@ export default function ViewCartPage() {
       fallback={
         <div className="min-h-screen bg-gray-50/50 flex items-center justify-center">
           <div className="flex flex-col items-center gap-3">
-            <div className="w-8 h-8 border-2 border-black border-t-transparent rounded-full animate-spin" />
+            <div className="w-8 h-8 border-2 border-primary border-t-transparent rounded-full animate-spin" />
             <p className="text-sm font-medium text-gray-500">লোড হচ্ছে...</p>
           </div>
         </div>

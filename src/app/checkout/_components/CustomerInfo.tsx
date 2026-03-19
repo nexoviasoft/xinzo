@@ -56,14 +56,14 @@ const CustomerInfo = ({
           <div className="flex flex-col gap-3">
             <div className="grid min-[550px]:grid-cols-2 grid-cols-1 gap-3">
               <input
-                className="border border-gray-200 outline-none  py-2.5 px-3 text-sm focus:border-black placeholder:text-gray-400 bg-gray-50/30 focus:bg-white transition-all rounded-lg"
+                className="border border-gray-200 outline-none  py-2.5 px-3 text-sm focus:border-primary placeholder:text-gray-400 bg-gray-50/30 focus:bg-white transition-all rounded-lg"
                 type="email"
                 placeholder="ইমেইল (optional)"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
               <input
-                className="border border-gray-200 outline-none  py-2.5 px-3 text-sm focus:border-black placeholder:text-gray-400 bg-gray-50/30 focus:bg-white transition-all rounded-lg"
+                className="border border-gray-200 outline-none  py-2.5 px-3 text-sm focus:border-primary placeholder:text-gray-400 bg-gray-50/30 focus:bg-white transition-all rounded-lg"
                 type="text"
                 placeholder="সম্পূর্ণ নাম *"
                 value={name}
@@ -73,14 +73,14 @@ const CustomerInfo = ({
             </div>
             <div className="grid min-[550px]:grid-cols-2 grid-cols-1 gap-3">
               <input
-                className="border border-gray-200 outline-none  py-2.5 px-3 text-sm focus:border-black placeholder:text-gray-400 bg-gray-50/30 focus:bg-white transition-all rounded-lg"
+                className="border border-gray-200 outline-none  py-2.5 px-3 text-sm focus:border-primary placeholder:text-gray-400 bg-gray-50/30 focus:bg-white transition-all rounded-lg"
                 type="text"
                 placeholder="এলাকা / সিটি"
                 value={district || ""}
                 onChange={(e) => setDistrict?.(e.target.value)}
               />
               <input
-                className="border border-gray-200 outline-none  py-2.5 px-3 text-sm focus:border-black placeholder:text-gray-400 bg-gray-50/30 focus:bg-white transition-all rounded-lg"
+                className="border border-gray-200 outline-none  py-2.5 px-3 text-sm focus:border-primary placeholder:text-gray-400 bg-gray-50/30 focus:bg-white transition-all rounded-lg"
                 type="text"
                 placeholder="সম্পূর্ণ ঠিকানা *"
                 value={address}
@@ -90,7 +90,7 @@ const CustomerInfo = ({
             </div>
             <div className="grid grid-cols-1">
               <input
-                className="border border-gray-200 outline-none  py-2.5 px-3 text-sm focus:border-black placeholder:text-gray-400 bg-gray-50/30 focus:bg-white transition-all rounded-lg"
+                className="border border-gray-200 outline-none  py-2.5 px-3 text-sm focus:border-primary placeholder:text-gray-400 bg-gray-50/30 focus:bg-white transition-all rounded-lg"
                 type="tel"
                 inputMode="numeric"
                 placeholder="ফোন নম্বর *"
@@ -114,7 +114,7 @@ const CustomerInfo = ({
             </h2>
             <div className="flex flex-col gap-2">
               <select
-                className="border border-gray-200 outline-none py-2.5 px-3 text-sm focus:border-black bg-gray-50/30 focus:bg-white transition-all rounded-lg"
+                className="border border-gray-200 outline-none py-2.5 px-3 text-sm focus:border-primary bg-gray-50/30 focus:bg-white transition-all rounded-lg"
                 value={deliveryType || ""}
                 onChange={(e) =>
                   setDeliveryType?.(e.target.value as "inside" | "outside")
@@ -153,7 +153,7 @@ const CustomerInfo = ({
         <button
           type="submit"
           disabled={submitting}
-          className="bg-black hover:bg-gray-900 transition-all text-white text-sm font-bold py-3.5 flex items-center justify-center gap-2 disabled:opacity-70 shadow-md shadow-black/10 hover:shadow-lg hover:-translate-y-0.5 mt-2 !rounded-full"
+          className="bg-primary hover:bg-primaryDark transition-all text-white text-sm font-bold py-3.5 flex items-center justify-center gap-2 disabled:opacity-70 shadow-md shadow-[rgba(91,46,255,0.15)] hover:shadow-lg hover:-translate-y-0.5 mt-2 !rounded-full"
         >
           <IoCartOutline size={18} />
           {submitting ? "অর্ডার হচ্ছে..." : "অর্ডার কনফার্ম করুন"}

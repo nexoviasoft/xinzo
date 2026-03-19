@@ -74,7 +74,7 @@ interface ProductProps {
   promos?: PromoCode[];
 }
 
-const ProductDetails: React.FC<ProductProps> = ({ product, promos }) => {
+const ProductDetails: React.FC<ProductProps> = ({ product }) => {
   const [price, setPrice] = useState(
     Number(product?.price ?? product?.variant[0]?.price ?? 0),
   );
@@ -130,7 +130,7 @@ const ProductDetails: React.FC<ProductProps> = ({ product, promos }) => {
   const hasDiscount =
     (discountedPrice > 0 && discountedPrice < originalPrice) ||
     (Number(product?.off || 0) > 0 && originalPrice > 0);
-  const applicablePromos = promos ?? [];
+  
 
   const [shareUrl, setShareUrl] = useState<string>("");
   const [isShareOpen, setIsShareOpen] = useState(false);
@@ -156,7 +156,7 @@ const ProductDetails: React.FC<ProductProps> = ({ product, promos }) => {
         if (mounted) {
           setOwnerPhone(user?.phone ?? null);
         }
-      } catch (error) {
+      } catch {
         // console.error("Failed to load system user for product details:", error);
       }
     };
@@ -320,7 +320,7 @@ const ProductDetails: React.FC<ProductProps> = ({ product, promos }) => {
           />
         </div>
         <Link
-          className="flex-1 flex items-center justify-center gap-1 px-4 py-2 sm:text-base text-sm hover:bg-black bg-primary text-white transition-all ease-linear duration-200 rounded-3xl overflow-hidden"
+          className="flex-1 flex items-center justify-center gap-1 px-4 py-2 sm:text-base text-sm hover:bg-primaryDark bg-primary text-white transition-all ease-linear duration-200 rounded-3xl overflow-hidden"
           href={`/checkout?productId=${encodeURIComponent(
             String(product?.documentId || product?.id),
           )}&companyId=${encodeURIComponent(
