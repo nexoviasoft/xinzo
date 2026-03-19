@@ -15,22 +15,22 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "Fiberace - T-Shirt Brand",
-    template: "%s | Fiberace",
+    default: "Xinzo - Multi Products ",
+    template: "%s | Xinzo",
   },
-  description: "FreeStyle - Premium T-shirt brand. Shop quality menswear and stylish apparel.",
-  keywords: ["t-shirt", "menswear", "apparel", "FreeStyle", "Fiberace", "fashion", "clothing"],
-  authors: [{ name: "Fiberace" }],
-  creator: "Fiberace",
+  description: "Xinzo - Premium T-shirt brand. Shop quality menswear and stylish apparel.",
+  keywords: ["t-shirt", "menswear", "apparel", "Xinzo", "fashion", "clothing"],
+  authors: [{ name: "Xinzo" }],
+  creator: "Xinzo",
   openGraph: {
-    title: "Fiberace - T-Shirt Brand",
-    description: "Fiberace - Premium T-shirt brand. Shop quality menswear and stylish apparel.",
+    title: "Xinzo - Multi Products ",
+    description: "Xinzo - Premium T-shirt brand. Shop quality menswear and stylish apparel.",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Fiberace - T-Shirt Brand",
-    description: "Fiberace - Premium T-shirt brand. Shop quality menswear and stylish apparel.",
+    title: "Xinzo - Multi Products ", 
+    description: "Xinzo - Premium T-shirt brand. Shop quality menswear and stylish apparel.",
   },
   robots: {
     index: true,
@@ -55,7 +55,7 @@ export default function RootLayout({
             href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
           />
         </head>
-        <body className={`${hindSiliguriFonts.variable} ${baiJamjuree.variable} font-baiJamjuree antialiased bg-white text-black`}>
+        <body className={`${hindSiliguriFonts.variable} ${baiJamjuree.variable} font-baiJamjuree antialiased bg-gradient-to-br from-white to-primary/5 text-black`}>
           <AntiDevTools />
           <AuthProvider>
             <Toaster />

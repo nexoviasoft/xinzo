@@ -12,6 +12,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 import React from "react";
+import { sanitizeImageUrl } from "../../utils/sanitizeImageUrl";
 
 import toast from "react-hot-toast";
 
@@ -196,8 +197,8 @@ const ProductCard = ({ product, detailHref }: { product: ProductProps; detailHre
           sku: product?.sku || product?.SKU,
           price: Number(product?.price || product?.variant?.[0]?.price || 0),
           discountPrice: Number(product?.discountPrice || 0),
-          thumbnail: product?.thumbnail || product?.images?.[0]?.url,
-          images: (product?.images || []).map((img) => ({ url: img.url, alt: img.name })),
+          thumbnail: sanitizeImageUrl(product?.thumbnail || product?.images?.[0]?.url || ""),
+          images: (product?.images || []).map((img) => ({ url: sanitizeImageUrl(img.url), alt: img.name })),
         }, Number(product?.price || product?.variant?.[0]?.price || 0))
 
         toast.success("Product added to cart!");
@@ -214,8 +215,8 @@ const ProductCard = ({ product, detailHref }: { product: ProductProps; detailHre
           sku: product?.sku || product?.SKU,
           price: Number(product?.price || 0),
           discountPrice: Number(product?.discountPrice || 0),
-          thumbnail: product?.thumbnail || product?.images?.[0]?.url,
-          images: (product?.images || []).map((img) => ({ url: img.url, alt: img.name })),
+          thumbnail: sanitizeImageUrl(product?.thumbnail || product?.images?.[0]?.url || ""),
+          images: (product?.images || []).map((img) => ({ url: sanitizeImageUrl(img.url), alt: img.name })),
         }, Number(product?.price || 0))
 
         toast.success("Product added to cart!");
@@ -246,9 +247,11 @@ const ProductCard = ({ product, detailHref }: { product: ProductProps; detailHre
     router.push(href);
   };
 
-  const imgSrc =
+  const imgSrc = sanitizeImageUrl(
     (product?.thumbnail && product.thumbnail.trim()) ||
-    product?.images?.[0]?.url;
+      product?.images?.[0]?.url ||
+      ""
+  );
 
   const productDescription =
     product?.shortDescription || product?.description || "";

@@ -151,7 +151,16 @@ const Header = () => {
               >
                 অর্ডার ট্র্যাকিং
               </Link>
+
+              <Link
+                href="/reseller"
+                className=" text-lg font-medium px-3 py-2 hover:text-primary transition-all ease-linear duration-200"
+              >
+                রিসেলার
+              </Link>
             </ul>
+
+            
           </div>
           <div className=" flex gap-4 items-center  ">
             <div className="">
@@ -244,6 +253,14 @@ const Header = () => {
             className=" text-lg font-medium px-5 py-2 hover:text-primary transition-all ease-linear duration-200 hover:bg-primary/5"
           >
             অর্ডার ট্র্যাকিং
+          </Link>
+
+          <Link
+            onClick={() => setToggle(!toggle)}
+            href="/reseller"
+            className=" text-lg font-medium px-5 py-2 hover:text-primary transition-all ease-linear duration-200 hover:bg-primary/5"
+          >
+            রিসেলার
           </Link>
 
           {!authLoading && !isAuthenticated && (

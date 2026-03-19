@@ -14,10 +14,9 @@ module.exports = {
         baiJamjuree: ["var(--font-baiJamjuree)", "var(--font-hindSiliguri)"],
       },
       colors: {
-        // Black and white theme
-        primary: "#000000",
-        primaryDark: "#1a1a1a",
-        accent: "#404040",
+        primary: "#5B2EFF",
+        primaryDark: "#3D1BB3",
+        accent: "#FF8A00",
       },
     },
   },

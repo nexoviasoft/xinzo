@@ -2,6 +2,7 @@
 import { cn } from "../../../../utils/cn";
 import Image from "next/image";
 import { useState } from "react";
+import { sanitizeImageUrl } from "../../../../utils/sanitizeImageUrl";
 
 interface ImageItem {
   name: string;
@@ -18,7 +19,7 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images }) => {
     <div className="flex flex-col gap-4 w-full">
       <div className="relative w-full aspect-square md:aspect-[4/3] overflow-hidden rounded-xl bg-gray-50 border border-gray-100">
         <Image
-          src={images[currentImage]?.url}
+          src={sanitizeImageUrl(images[currentImage]?.url)}
           alt="Product Image"
           fill
           className="object-contain p-2"
@@ -38,7 +39,7 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images }) => {
             )}
           >
             <Image
-              src={item?.url}
+              src={sanitizeImageUrl(item?.url)}
               alt={`Thumbnail ${index + 1}`}
               fill
               className="object-contain p-1"

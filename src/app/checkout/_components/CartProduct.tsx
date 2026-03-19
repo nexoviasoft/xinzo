@@ -6,6 +6,7 @@ import { Badge } from "antd";
 import Image from "next/image";
 import toast from "react-hot-toast";
 import { FaXmark } from "react-icons/fa6";
+import { sanitizeImageUrl } from "../../../utils/sanitizeImageUrl";
 
 interface ItemProps {
   id: number;
@@ -34,7 +35,9 @@ const CartProduct = ({
   const quantity = item?.quantity ?? 0;
   const { updateCartItem, deleteCartItem } = useCart();
 
-  const imageUrl = item.product.thumbnail || item.product.images?.[0]?.url || "/placeholder.png";
+  const imageUrl =
+    sanitizeImageUrl(item.product.thumbnail || item.product.images?.[0]?.url) ||
+    "/placeholder.png";
   const imageAlt = item.product.images?.[0]?.alt || item.product.name || "product";
 
   const handleIncrement = async () => {

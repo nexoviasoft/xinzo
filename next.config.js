@@ -17,7 +17,12 @@ const nextConfig = {
       // Allow CDN used by backend for product images (both http and https just in case)
       { protocol: "https", hostname: "innowavelog-cdn.up.railway.app", pathname: "/uploads/**" },
       { protocol: "http", hostname: "innowavelog-cdn.up.railway.app", pathname: "/uploads/**" },
+      // Squadlog CDN domain for media
+      { protocol: "https", hostname: "squadlog-cdn.up.railway.app", pathname: "/**" },
+      { protocol: "http", hostname: "squadlog-cdn.up.railway.app", pathname: "/**" },
       // Backend uploads / external CDN (Top Products, Media, etc.)
+      // Example domain used in some feeds/tests
+      { protocol: "https", hostname: "example.com", pathname: "/**" },
       { protocol: "https", hostname: "innowavecart-backend.up.railway.app", pathname: "/uploads/**" },
       { protocol: "http", hostname: "innowavecart-backend.up.railway.app", pathname: "/uploads/**" },
       { protocol: "http", hostname: "localhost", port: "8000", pathname: "/uploads/**" },
