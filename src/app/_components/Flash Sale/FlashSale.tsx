@@ -16,8 +16,9 @@ const FlashSale = async ({ isPage = false }: FlashSaleProps = {}) => {
     // flashSaleProducts will remain empty array
   }
 
-  // If there are no flash sale products, show the message
+  // If there are no flash sale products, show the message only on the flash sale page
   if (flashSaleProducts.length === 0) {
+    if (!isPage) return null;
     return (
       <section className="max-w-7xl mx-auto px-5 md:pt-10 pt-5 min-h-[30vh] flex flex-col items-center justify-center">
         <div className="text-center space-y-4">
