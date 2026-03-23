@@ -16,23 +16,20 @@ const FlashSale = async ({ isPage = false }: FlashSaleProps = {}) => {
     // flashSaleProducts will remain empty array
   }
 
-  // If there are no flash sale products, don't show the section
+  // If there are no flash sale products, show the message
   if (flashSaleProducts.length === 0) {
-    if (isPage) {
-      return (
-        <section className="max-w-7xl mx-auto px-5 md:pt-10 pt-5 min-h-[50vh] flex flex-col items-center justify-center">
-          <div className="text-center space-y-4">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-800">
-              এই মুহূর্তে কোনো ফ্ল্যাশ সেল চলছে না
-            </h2>
-            <p className="text-gray-500">
-              পরবর্তী ফ্ল্যাশ সেলের চমকপ্রদ ডিল পেতে আমাদের সাথেই থাকুন!
-            </p>
-          </div>
-        </section>
-      );
-    }
-    return null;
+    return (
+      <section className="max-w-7xl mx-auto px-5 md:pt-10 pt-5 min-h-[30vh] flex flex-col items-center justify-center">
+        <div className="text-center space-y-4">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-800">
+            এই মুহূর্তে কোনো ফ্ল্যাশ সেল চলছে না
+          </h2>
+          <p className="text-gray-500">
+            পরবর্তী ফ্ল্যাশ সেলের চমকপ্রদ ডিল পেতে আমাদের সাথেই থাকুন!
+          </p>
+        </div>
+      </section>
+    );
   }
 
   // Calculate maximum discount from flash sale products (real % off)
